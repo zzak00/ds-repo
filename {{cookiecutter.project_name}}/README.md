@@ -11,7 +11,6 @@ make setup
 ```
 
 ### Activate environment
-Max / Linux
 ```
 make activate
 ```
