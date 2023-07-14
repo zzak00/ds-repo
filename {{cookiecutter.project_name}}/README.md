@@ -7,23 +7,13 @@
 
 ### Setup using
 ```
-make create_environment
+make setup
 ```
 
 ### Activate environment
 Max / Linux
 ```
-activate venv
-```
-
-### Initialize a git repository
-```
-initialize_git
-```
-
-### Install Dependencies
-```
-make install
+make activate
 ```
 
 ### View documentation
