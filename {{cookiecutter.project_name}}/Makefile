@@ -8,6 +8,7 @@ install:
 	@echo "Installing dev requirements..."
 	poetry add -D tox
 	poetry add -D pdoc
+	poetry add -D pytest
 	poetry add -D pre-commit
 	poetry run pre-commit install
 
@@ -39,3 +40,8 @@ clean:
 export_requirements:
 	@echo Exporting requirements...
 	poetry export -f requirements.txt --output requirements.txt --without-hashes
+
+# run tests
+test:
+	@echo Running tests...
+	poetry run pytest
