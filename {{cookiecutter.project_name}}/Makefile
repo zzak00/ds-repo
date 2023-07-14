@@ -39,7 +39,7 @@ clean:
 # export requirements
 export_requirements:
 	@echo Exporting requirements...
-	poetry export -f requirements.txt --output requirements.txt --without-hashes
+	poetry export -f requirements.txt --output requirements/requirements.txt --without-hashes
 
 # run tests
 test:
