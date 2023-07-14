@@ -1,0 +1,45 @@
+# Apply to all files without commiting:
+#   pre-commit run --all-files
+# Update this file:
+#   pre-commit autoupdate
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: check-ast
+    -   id: check-byte-order-marker
+    -   id: check-case-conflict
+    -   id: check-docstring-first
+    -   id: check-executables-have-shebangs
+    -   id: check-json
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: detect-private-key
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: mixed-line-ending
+# format code
+-   repo: https://github.com/psf/black
+    rev: 22.12.0
+    hooks:
+    -   id: black
+# remove unused imports and variables
+-   repo: https://github.com/PyCQA/autoflake
+    rev: v2.0.0
+    hooks:
+    -   id: autoflake
+        args:
+        - --in-place
+        - --remove-all-unused-imports
+        - --remove-unused-variables
+# sort imports
+-   repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
+    hooks:
+    -   id: isort
+# check docstrings
+-   repo: https://github.com/econchick/interrogate
+    rev: 1.5.0
+    hooks:
+    - id: interrogate
+      args: [-vv, -i, --ignore-module, --fail-under=80]

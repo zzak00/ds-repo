@@ -1,0 +1,16 @@
+name: Checks
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Checks
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - run: pip install --upgrade pip
+    - run: pip install "black<23" pylint==v3.0.0a3
+    - run: black --diff --check $(git ls-files '*.py')
+    - run: pylint --disable=all --enable=unused-import $(git ls-files '*.py')
